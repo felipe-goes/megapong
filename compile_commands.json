@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/ball.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/ball.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/ball.c"
+},
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/boot/rom_head.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/boot/rom_head.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/boot/rom_head.c"
+},
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/game.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/game.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/game.c"
+},
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/joystick.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/joystick.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/joystick.c"
+},
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/main.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/main.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/main.c"
+},
+{
+  "directory": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong",
+  "command": "/usr/bin/cc  -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./src/include -I/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/./res -I/opt/SGDK/inc -I/opt/SGDK/inc/ext -I/opt/SGDK/inc/ext/mw -I/opt/SGDK/src -I/opt/SGDK/src/boot -I/opt/SGDK/src/ext -I/opt/SGDK/src/ext/mw -I/opt/SGDK/res  -o CMakeFiles/megapong.dir/src/player.c.o -c /home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/player.c",
+  "file": "/home/felipe/Public/Dev/Estudos/MegaDrive/megapong/src/player.c"
+}
+]

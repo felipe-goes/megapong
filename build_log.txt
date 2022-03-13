@@ -1,0 +1,9 @@
+mkdir -p src/boot
+mkdir -p out
+mkdir -p out/src/
+m68k-elf-gcc  -DSGDK_GCC -m68000 -Wall -Wextra -Wno-shift-negative-value -Wno-main -Wno-unused-parameter -fno-builtin -Iinc -Isrc -Ires -I/sgdk/inc -I/sgdk/res -B/sgdk/bin -O3 -fuse-linker-plugin -fno-web -fno-gcse -fno-unit-at-a-time -fomit-frame-pointer -flto -MMD -c src/auxiliar.c -o out/src/auxiliar.o
+[01m[Ksrc/auxiliar.c:1:22:[m[K [01;31m[Kfatal error: [m[Kauxiliar.h: No such file or directory
+ #include "auxiliar.h"
+                      [01;31m[K^[m[K
+compilation terminated.
+make: *** [/sgdk/makefile.gen:160: out/src/auxiliar.o] Error 1
