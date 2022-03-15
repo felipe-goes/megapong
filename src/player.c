@@ -2,56 +2,57 @@
 
 void _positionPlayer(Player *this) {
   /*Add the player's velocity to its position*/
-  this->_pos_x += this->_vel_x;
+  this->_posX += this->_velX;
 
   /*Keep the player within the bounds of the screen*/
-  if (this->_pos_x < LEFT_EDGE)
-    this->_pos_x = LEFT_EDGE;
-  if (this->_pos_x + PLAYER_WIDTH > RIGHT_EDGE)
-    this->_pos_x = RIGHT_EDGE - PLAYER_WIDTH;
+  if (this->_posX < LEFT_EDGE)
+    this->_posX = LEFT_EDGE;
+  if (this->_posX + PLAYER_WIDTH > RIGHT_EDGE)
+    this->_posX = RIGHT_EDGE - PLAYER_WIDTH;
 
   /*Let the Sprite engine position the sprite*/
-  SPR_setPosition(this->sprite, this->_pos_x, PLAYER_POS_Y);
+  SPR_setPosition(this->sprite, this->_posX, PLAYER_POS_Y);
 }
 
-void _setPosX(Player *this, int pos_x){
-  this->_pos_x = pos_x;
+void _setPlayerPosX(Player *this, int pos_x){
+  this->_posX = pos_x;
 }
-int _getPosX(Player *this){
-  return this->_pos_x;
+int _getPlayerPosX(Player *this){
+  return this->_posX;
 }
 
-void _setVelX(Player *this, int vel_x){
-  this->_vel_x = vel_x;
+void _setPlayerVelX(Player *this, int vel_x){
+  this->_velX = vel_x;
 }
-int _getVelX(Player *this){
-  return this->_vel_x;
+int _getPlayerVelX(Player *this){
+  return this->_velX;
 }
 
 // Created just to illustrate how it would be if player did not had to be global
 Player* PlayerConstructor(Player *this, int pos_x, int vel_x){
-  this->_pos_x = pos_x;
-  this->_vel_x = vel_x;
+  this->_posX = pos_x;
+  this->_velX = vel_x;
 
-  this->setPosX = _setPosX;
-  this->getPosX = _getPosX;
+  this->setPosX = _setPlayerPosX;
+  this->getPosX = _getPlayerPosX;
 
-  this->setVelX = _setVelX;
-  this->getVelX = _getVelX;
+  this->setVelX = _setPlayerVelX;
+  this->getVelX = _getPlayerVelX;
 
   this->positionPlayer = _positionPlayer;
 
   return this;
 }
 
+// Initialization
 Player player = {
-  ._pos_x = 144,
-  ._vel_x = 0,
+  ._posX = 144,
+  ._velX = 0,
 
-  .setPosX = _setPosX,
-  .getPosX = _getPosX,
-  .setVelX = _setVelX,
-  .getVelX = _getVelX,
+  .setPosX = _setPlayerPosX,
+  .getPosX = _getPlayerPosX,
+  .setVelX = _setPlayerVelX,
+  .getVelX = _getPlayerVelX,
 
   .positionPlayer = _positionPlayer
 };

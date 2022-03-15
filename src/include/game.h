@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef __GAME_CONST__
-#define __GAME_CONST__
+#ifndef _GAME_CONST_
+#define _GAME_CONST_
 
 #include <genesis.h>
 #include <string.h>
@@ -33,4 +33,4 @@ extern void startGame(void);
 extern void endGame(void);
 extern void updateScoreDisplay(void);
 
-#endif // __GAME_CONST__
+#endif // _GAME_CONST_

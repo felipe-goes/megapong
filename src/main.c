@@ -27,7 +27,7 @@ int main() {
                         40, 30);
 
     // Create sprite variables
-    ball = SPR_addSprite(&imgball, ball_pos_x, ball_pos_y,
+    ball.sprite = SPR_addSprite(&imgball, ball.getPosX(&ball), ball.getPosY(&ball),
                          TILE_ATTR(PAL1, 0, FALSE, FALSE));
     ball_color = VDP_getPaletteColor(22);
 
@@ -37,7 +37,7 @@ int main() {
     // Game loop
     while (1) {
         if (game_on == TRUE) {
-            moveBall();
+            ball.moveBall(&ball);
             player.positionPlayer(&player);
 
             // Handle the flashing of the ball

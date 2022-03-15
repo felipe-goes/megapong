@@ -18,11 +18,11 @@ void startGame(void) {
   score = 0;
   updateScoreDisplay();
 
-  ball_pos_x = 0;
-  ball_pos_y = 0;
+  ball.setPosX(&ball, 0);
+  ball.setPosY(&ball, 0);
 
-  ball_vel_x = 1;
-  ball_vel_y = 1;
+  ball.setVelX(&ball, 1);
+  ball.setVelY(&ball, 1);
 
   /*Clear the text from the screen*/
   VDP_clearTextArea(0, 10, 40, 10);

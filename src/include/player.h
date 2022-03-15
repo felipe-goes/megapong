@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef PLAYER
-#define PLAYER
+#ifndef _PLAYER_
+#define _PLAYER_
 
 #include <genesis.h>
 #include "game.h"
@@ -24,19 +24,19 @@ typedef struct PLAYER_STRUCT{
   int (*getVelX)(Player *this);
 
   // private
-  int _pos_x;
-  int _vel_x;
+  int _posX;
+  int _velX;
 } Player;
 
 extern Player* PlayerConstructor(Player *this, int pos_x, int vel_x);
 extern Player player;
 
-extern void _setPosX(Player *this, int pos_x);
-extern int _getPosX(Player *this);
+extern void _setPlayerPosX(Player *this, int pos_x);
+extern int _getPlayerPosX(Player *this);
 
-extern void _setVelX(Player *this, int vel_x);
-extern int _getVelX(Player *this);
+extern void _setPlayerVelX(Player *this, int vel_x);
+extern int _getPlayerVelX(Player *this);
 
 extern void _positionPlayer(Player *this);
 
-#endif // PLAYER
+#endif // _PLAYER_

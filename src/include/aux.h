@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef __AUX__
-#define __AUX__
+#ifndef _AUX_
+#define _AUX_
 
 #include <genesis.h>
 
