@@ -13,7 +13,6 @@ int main() {
     JOY_setEventHandler(&myJoyHandler);
     SPR_init(0, 0, 0);
 
-
     VDP_loadTileSet(bgtile.tileset, 1, DMA);
     VDP_setPalette(PAL1, bgtile.palette->data);
 
@@ -27,12 +26,14 @@ int main() {
                         40, 30);
 
     // Create sprite variables
-    ball.sprite = SPR_addSprite(&imgball, ball.getPosX(&ball), ball.getPosY(&ball),
-                         TILE_ATTR(PAL1, 0, FALSE, FALSE));
+    ball.sprite =
+        SPR_addSprite(&imgball, ball.getPosX(&ball), ball.getPosY(&ball),
+                      TILE_ATTR(PAL1, 0, FALSE, FALSE));
     ball_color = VDP_getPaletteColor(22);
 
-    player.sprite = SPR_addSprite(&paddle, player.getPosX(&player), PLAYER_POS_Y,
-                           TILE_ATTR(PAL1, 0, FALSE, FALSE));
+    player.sprite =
+        SPR_addSprite(&paddle, player.getPosX(&player), PLAYER_POS_Y,
+                      TILE_ATTR(PAL1, 0, FALSE, FALSE));
 
     // Game loop
     while (1) {
