@@ -1,4 +1,5 @@
 #include "include/ball.h"
+#include "include/player.h"
 
 Sprite *ball;
 
@@ -33,8 +34,8 @@ void moveBall() {
   }
 
   /*Check for collisions with the player paddle*/
-  if (ball_pos_x < player.pos_x + PLAYER_WIDTH &&
-      ball_pos_x + ball_width > player.pos_x) {
+  if (ball_pos_x < player.getPosX(&player) + PLAYER_WIDTH &&
+      ball_pos_x + ball_width > player.getPosX(&player)) {
     if (ball_pos_y < PLAYER_POS_Y + PLAYER_HEIGHT &&
         ball_pos_y + ball_height >= PLAYER_POS_Y) {
       // On collision, invert the velocity

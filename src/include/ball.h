@@ -5,9 +5,9 @@
 
 #include <genesis.h>
 
-#include "include/game.h"
-#include "include/player.h"
-#include "include/aux.h"
+#include "game.h"
+#include "player.h"
+#include "aux.h"
 
 extern Sprite *ball;
 
@@ -19,6 +19,6 @@ extern int ball_vel_y;
 extern int ball_width;
 extern int ball_height;
 
-extern void moveBall(void);
+extern void moveBall();
 
 #endif // __BALL__

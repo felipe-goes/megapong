@@ -6,8 +6,8 @@
 #include <genesis.h>
 #include <string.h>
 
-#include "include/ball.h"
-#include "include/aux.h"
+#include "ball.h"
+#include "aux.h"
 
 extern u8 game_on;
 extern char msg_start[22];

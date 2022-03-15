@@ -13,6 +13,7 @@ int main() {
     JOY_setEventHandler(&myJoyHandler);
     SPR_init(0, 0, 0);
 
+
     VDP_loadTileSet(bgtile.tileset, 1, DMA);
     VDP_setPalette(PAL1, bgtile.palette->data);
 
@@ -26,20 +27,18 @@ int main() {
                         40, 30);
 
     // Create sprite variables
-    PlayerConstructor(144, 0);
-
     ball = SPR_addSprite(&imgball, ball_pos_x, ball_pos_y,
                          TILE_ATTR(PAL1, 0, FALSE, FALSE));
     ball_color = VDP_getPaletteColor(22);
 
-    player.sprite = SPR_addSprite(&paddle, player.pos_x, PLAYER_POS_Y,
+    player.sprite = SPR_addSprite(&paddle, player.getPosX(&player), PLAYER_POS_Y,
                            TILE_ATTR(PAL1, 0, FALSE, FALSE));
 
     // Game loop
     while (1) {
         if (game_on == TRUE) {
             moveBall();
-            positionPlayer();
+            player.positionPlayer(&player);
 
             // Handle the flashing of the ball
             if (flashing == TRUE) {
