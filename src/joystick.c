@@ -3,8 +3,8 @@
 void myJoyHandler(u16 joy, u16 changed, u16 state) {
     if (joy == JOY_1) {
         if (state & BUTTON_START) {
-            if (!game_on) {
-                startGame();
+            if (!game.getOn(&game)) {
+                game.startGame(&game);
             }
         }
 

@@ -18,9 +18,9 @@ int main() {
 
     /*Draw the texts*/
     VDP_setTextPlane(BG_A);
-    VDP_drawText(label_score, 1, 1);
-    showText(msg_start);
-    updateScoreDisplay();
+    VDP_drawText(game.getLabelScore(&game), 1, 1);
+    showText(game.getMsgStart(&game));
+    game.updateScoreDisplay(&game);
 
     VDP_fillTileMapRect(BG_B, TILE_ATTR_FULL(PAL1, 0, FALSE, FALSE, 1), 0, 0,
                         40, 30);
@@ -29,32 +29,35 @@ int main() {
     ball.sprite =
         SPR_addSprite(&imgball, ball.getPosX(&ball), ball.getPosY(&ball),
                       TILE_ATTR(PAL1, 0, FALSE, FALSE));
-    ball_color = VDP_getPaletteColor(22);
+    ball.setColor(&ball, VDP_getPaletteColor(22));
 
     player.sprite =
         SPR_addSprite(&paddle, player.getPosX(&player), PLAYER_POS_Y,
                       TILE_ATTR(PAL1, 0, FALSE, FALSE));
 
     // Game loop
+    int newFrame; // variable for the game loop
+
     while (1) {
-        if (game_on == TRUE) {
+        if (game.getOn(&game)) {
             ball.moveBall(&ball);
             player.positionPlayer(&player);
 
             // Handle the flashing of the ball
-            if (flashing == TRUE) {
-                frames++;
+            if (game.getFlashing(&game)) {
+                newFrame = game.getFrames(&game)+1;
+                game.setFrames(&game, newFrame);
 
-                if (frames % 4 == 0) {
-                    VDP_setPaletteColor(22, ball_color);
-                } else if (frames % 2 == 0) {
+                if (game.getFrames(&game) % 4 == 0) {
+                    VDP_setPaletteColor(22, ball.getColor(&ball));
+                } else if (game.getFrames(&game) % 2 == 0) {
                     VDP_setPaletteColor(22, RGB24_TO_VDPCOLOR(0xffffff));
                 }
 
                 // Stop flashing
-                if (frames > 16) {
-                    flashing = FALSE;
-                    frames = 0;
+                if (game.getFrames(&game) > 16) {
+                    game.setFlashing(&game, FALSE);
+                    game.setFrames(&game, 0);
                 }
             }
         }

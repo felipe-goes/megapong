@@ -20,7 +20,7 @@ void _moveBall(Ball *this) {
         this->_posY = TOP_EDGE;
         this->_velY = -this->_velY;
     } else if (this->_posY + this->_height > BOTTOM_EDGE) {
-        endGame();
+        game.endGame(&game);
     }
 
     /*Check for collisions with the player paddle*/
@@ -34,12 +34,12 @@ void _moveBall(Ball *this) {
             this->_velY = -this->_velY;
 
             // Increase the score and update the HUD
-            score++;
-            flashing = TRUE;
-            updateScoreDisplay();
+            game.setScore(&game, game.getScore(&game) + 1);
+            game.setFlashing(&game, TRUE);
+            game.updateScoreDisplay(&game);
 
             // Make ball faster on every 10th hit
-            if (score % 10 == 0) {
+            if (game.getScore(&game) % 10 == 0) {
                 this->_velX += sign(this->_velX);
                 this->_velY += sign(this->_velY);
             }
@@ -56,6 +56,7 @@ void _setBallVelX(Ball *this, int velX) { this->_velX = velX; }
 void _setBallVelY(Ball *this, int velY) { this->_velY = velY; }
 void _setBallWidth(Ball *this, int width) { this->_width = width; }
 void _setBallHeight(Ball *this, int height) { this->_height = height; }
+void _setBallColor(Ball *this, int color) { this->_color = color; }
 
 // Getters
 int _getBallPosX(Ball *this) { return this->_posX; }
@@ -64,6 +65,7 @@ int _getBallVelX(Ball *this) { return this->_velX; }
 int _getBallVelY(Ball *this) { return this->_velY; }
 int _getBallWidth(Ball *this) { return this->_width; }
 int _getBallHeight(Ball *this) { return this->_height; }
+int _getBallColor(Ball *this) { return this->_color; }
 
 // Initialization
 Ball ball = {._posX = 160 - 4,
@@ -72,6 +74,7 @@ Ball ball = {._posX = 160 - 4,
              ._velY = 0,
              ._width = 8,
              ._height = 8,
+             ._color = 0,
 
              .moveBall = _moveBall,
 
@@ -81,10 +84,12 @@ Ball ball = {._posX = 160 - 4,
              .setVelY = _setBallVelY,
              .setWidth = _setBallWidth,
              .setHeight = _setBallHeight,
+             .setColor = _setBallColor,
 
              .getPosX = _getBallPosX,
              .getPosY = _getBallPosY,
              .getVelX = _getBallVelX,
              .getVelY = _getBallVelY,
              .getWidth = _getBallWidth,
-             .getHeight = _getBallHeight};
+             .getHeight = _getBallHeight,
+             .getColor = _getBallColor};

@@ -21,6 +21,7 @@ typedef struct BALL_STRUCT {
     void (*setVelY)(Ball *this, int velY);
     void (*setWidth)(Ball *this, int width);
     void (*setHeight)(Ball *this, int height);
+    void (*setColor)(Ball *this, int color);
 
     int (*getPosX)(Ball *this);
     int (*getPosY)(Ball *this);
@@ -28,6 +29,7 @@ typedef struct BALL_STRUCT {
     int (*getVelY)(Ball *this);
     int (*getWidth)(Ball *this);
     int (*getHeight)(Ball *this);
+    int (*getColor)(Ball *this);
 
     // private
     int _posX;
@@ -36,6 +38,7 @@ typedef struct BALL_STRUCT {
     int _velY;
     int _width;
     int _height;
+    u16 _color;
 } Ball;
 
 extern Ball ball;
@@ -48,6 +51,7 @@ extern void _setBallVelX(Ball *this, int velX);
 extern void _setBallVelY(Ball *this, int velY);
 extern void _setBallWidth(Ball *this, int width);
 extern void _setBallHeight(Ball *this, int height);
+extern void _setBallColor(Ball *this, int color);
 
 extern int _getBallPosX(Ball *this);
 extern int _getBallPosY(Ball *this);
@@ -55,5 +59,6 @@ extern int _getBallVelX(Ball *this);
 extern int _getBallVelY(Ball *this);
 extern int _getBallWidth(Ball *this);
 extern int _getBallHeight(Ball *this);
+extern int _getBallColor(Ball *this);
 
 #endif // _BALL_
