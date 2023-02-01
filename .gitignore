@@ -1,4 +1,5 @@
 .cache/
 tutorial/
 out/
+src/boot/
 compile_commands.json
