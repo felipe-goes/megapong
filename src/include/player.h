@@ -13,19 +13,19 @@
 
 typedef struct PLAYER_STRUCT Player;
 typedef struct PLAYER_STRUCT {
-    // public
-    Sprite *sprite;
-    void (*positionPlayer)(Player *this);
+  // public
+  Sprite *sprite;
+  void (*positionPlayer)(Player *this);
 
-    void (*setPosX)(Player *this, int pos_x);
-    int (*getPosX)(Player *this);
+  void (*setPosX)(Player *this, int pos_x);
+  int (*getPosX)(Player *this);
 
-    void (*setVelX)(Player *this, int vel_x);
-    int (*getVelX)(Player *this);
+  void (*setVelX)(Player *this, int vel_x);
+  int (*getVelX)(Player *this);
 
-    // private
-    int _posX;
-    int _velX;
+  // private
+  int _posX;
+  int _velX;
 } Player;
 
 extern Player *PlayerConstructor(Player *this, int pos_x, int vel_x);

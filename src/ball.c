@@ -2,51 +2,51 @@
 #include "include/player.h"
 
 void _moveBall(Ball *this) {
-    // Position the ball
-    this->_posX += this->_velX;
-    this->_posY += this->_velY;
+  // Position the ball
+  this->_posX += this->_velX;
+  this->_posY += this->_velY;
 
-    // Check horizontal bounds
-    if (this->_posX < LEFT_EDGE) {
-        this->_posX = LEFT_EDGE;
-        this->_velX = -this->_velX;
-    } else if (this->_posX + this->_width > RIGHT_EDGE) {
-        this->_posX = RIGHT_EDGE - this->_width;
-        this->_velX = -this->_velX;
+  // Check horizontal bounds
+  if (this->_posX < LEFT_EDGE) {
+    this->_posX = LEFT_EDGE;
+    this->_velX = -this->_velX;
+  } else if (this->_posX + this->_width > RIGHT_EDGE) {
+    this->_posX = RIGHT_EDGE - this->_width;
+    this->_velX = -this->_velX;
+  }
+
+  // Check vertical bounds
+  if (this->_posY < TOP_EDGE) {
+    this->_posY = TOP_EDGE;
+    this->_velY = -this->_velY;
+  } else if (this->_posY + this->_height > BOTTOM_EDGE) {
+    game.endGame(&game);
+  }
+
+  /*Check for collisions with the player paddle*/
+  if (this->_posX<player.getPosX(&player) + PLAYER_WIDTH &&this->_posX +
+                  this->_width>
+          player.getPosX(&player)) {
+    if (this->_posY < PLAYER_POS_Y + PLAYER_HEIGHT &&
+        this->_posY + this->_height >= PLAYER_POS_Y) {
+      // On collision, invert the velocity
+      this->_posY = PLAYER_POS_Y - this->_height - 1;
+      this->_velY = -this->_velY;
+
+      // Increase the score and update the HUD
+      game.setScore(&game, game.getScore(&game) + 1);
+      game.setFlashing(&game, TRUE);
+      game.updateScoreDisplay(&game);
+
+      // Make ball faster on every 10th hit
+      if (game.getScore(&game) % 10 == 0) {
+        this->_velX += sign(this->_velX);
+        this->_velY += sign(this->_velY);
+      }
     }
+  }
 
-    // Check vertical bounds
-    if (this->_posY < TOP_EDGE) {
-        this->_posY = TOP_EDGE;
-        this->_velY = -this->_velY;
-    } else if (this->_posY + this->_height > BOTTOM_EDGE) {
-        game.endGame(&game);
-    }
-
-    /*Check for collisions with the player paddle*/
-    if (this->_posX<player.getPosX(&player) + PLAYER_WIDTH &&this->_posX +
-                    this->_width>
-            player.getPosX(&player)) {
-        if (this->_posY < PLAYER_POS_Y + PLAYER_HEIGHT &&
-            this->_posY + this->_height >= PLAYER_POS_Y) {
-            // On collision, invert the velocity
-            this->_posY = PLAYER_POS_Y - this->_height - 1;
-            this->_velY = -this->_velY;
-
-            // Increase the score and update the HUD
-            game.setScore(&game, game.getScore(&game) + 1);
-            game.setFlashing(&game, TRUE);
-            game.updateScoreDisplay(&game);
-
-            // Make ball faster on every 10th hit
-            if (game.getScore(&game) % 10 == 0) {
-                this->_velX += sign(this->_velX);
-                this->_velY += sign(this->_velY);
-            }
-        }
-    }
-
-    SPR_setPosition(this->sprite, this->_posX, this->_posY);
+  SPR_setPosition(this->sprite, this->_posX, this->_posY);
 }
 
 // Setters

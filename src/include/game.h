@@ -16,42 +16,42 @@
 #define BOTTOM_EDGE 224
 
 typedef struct GAME_STRUCT Game;
-typedef struct GAME_STRUCT{
-    // public
-    void (*startGame)(Game *this);
-    void (*endGame)(Game *this);
-    void (*updateScoreDisplay)(Game *this);
+typedef struct GAME_STRUCT {
+  // public
+  void (*startGame)(Game *this);
+  void (*endGame)(Game *this);
+  void (*updateScoreDisplay)(Game *this);
 
-    void (*setOn)(Game *this, u8 on);
-    void (*setMsgStart)(Game *this, char *msgStart);
-    void (*setMsgReset)(Game *this, char *msgReset);
-    void (*setFlashing)(Game *this, int flashing);
-    void (*setFrames)(Game *this, int frames);
-    void (*setScore)(Game *this, int score);
-    void (*setLabelScore)(Game *this, char *labelScore);
-    void (*setStrScore)(Game *this, char *strScore);
+  void (*setOn)(Game *this, u8 on);
+  void (*setMsgStart)(Game *this, char *msgStart);
+  void (*setMsgReset)(Game *this, char *msgReset);
+  void (*setFlashing)(Game *this, int flashing);
+  void (*setFrames)(Game *this, int frames);
+  void (*setScore)(Game *this, int score);
+  void (*setLabelScore)(Game *this, char *labelScore);
+  void (*setStrScore)(Game *this, char *strScore);
 
-    u8 (*getOn)(Game *this);
-    char* (*getMsgStart)(Game *this);
-    char* (*getMsgReset)(Game *this);
-    int (*getFlashing)(Game *this);
-    int (*getFrames)(Game *this);
-    int (*getScore)(Game *this);
-    char* (*getLabelScore)(Game *this);
-    char* (*getStrScore)(Game *this);
+  u8 (*getOn)(Game *this);
+  char *(*getMsgStart)(Game *this);
+  char *(*getMsgReset)(Game *this);
+  int (*getFlashing)(Game *this);
+  int (*getFrames)(Game *this);
+  int (*getScore)(Game *this);
+  char *(*getLabelScore)(Game *this);
+  char *(*getStrScore)(Game *this);
 
-    // private
-    u8 _on;
-    char _msgStart[22];
-    char _msgReset[38];
+  // private
+  u8 _on;
+  char _msgStart[22];
+  char _msgReset[38];
 
-    int _flashing;
-    int _frames;
+  int _flashing;
+  int _frames;
 
-    // Score variables
-    int _score;
-    char _labelScore[6];
-    char _strScore[4];
+  // Score variables
+  int _score;
+  char _labelScore[6];
+  char _strScore[4];
 
 } Game;
 
@@ -69,13 +69,13 @@ extern void _setGameLabelScore(Game *this, char *labelScore);
 extern void _setGameStrScore(Game *this, char *strScore);
 
 extern u8 _getGameOn(Game *this);
-extern char* _getGameMsgStart(Game *this);
-extern char* _getGameMsgReset(Game *this);
+extern char *_getGameMsgStart(Game *this);
+extern char *_getGameMsgReset(Game *this);
 extern int _getGameFlashing(Game *this);
 extern int _getGameFrames(Game *this);
 extern int _getGameScore(Game *this);
-extern char* _getGameLabelScore(Game *this);
-extern char* _getGameStrScore(Game *this);
+extern char *_getGameLabelScore(Game *this);
+extern char *_getGameStrScore(Game *this);
 
 extern Game game;
 

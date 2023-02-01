@@ -11,34 +11,34 @@
 
 typedef struct BALL_STRUCT Ball;
 typedef struct BALL_STRUCT {
-    // public
-    Sprite *sprite;
-    void (*moveBall)(Ball *this);
+  // public
+  Sprite *sprite;
+  void (*moveBall)(Ball *this);
 
-    void (*setPosX)(Ball *this, int posX);
-    void (*setPosY)(Ball *this, int posY);
-    void (*setVelX)(Ball *this, int velX);
-    void (*setVelY)(Ball *this, int velY);
-    void (*setWidth)(Ball *this, int width);
-    void (*setHeight)(Ball *this, int height);
-    void (*setColor)(Ball *this, int color);
+  void (*setPosX)(Ball *this, int posX);
+  void (*setPosY)(Ball *this, int posY);
+  void (*setVelX)(Ball *this, int velX);
+  void (*setVelY)(Ball *this, int velY);
+  void (*setWidth)(Ball *this, int width);
+  void (*setHeight)(Ball *this, int height);
+  void (*setColor)(Ball *this, int color);
 
-    int (*getPosX)(Ball *this);
-    int (*getPosY)(Ball *this);
-    int (*getVelX)(Ball *this);
-    int (*getVelY)(Ball *this);
-    int (*getWidth)(Ball *this);
-    int (*getHeight)(Ball *this);
-    int (*getColor)(Ball *this);
+  int (*getPosX)(Ball *this);
+  int (*getPosY)(Ball *this);
+  int (*getVelX)(Ball *this);
+  int (*getVelY)(Ball *this);
+  int (*getWidth)(Ball *this);
+  int (*getHeight)(Ball *this);
+  int (*getColor)(Ball *this);
 
-    // private
-    int _posX;
-    int _posY;
-    int _velX;
-    int _velY;
-    int _width;
-    int _height;
-    u16 _color;
+  // private
+  int _posX;
+  int _posY;
+  int _velX;
+  int _velY;
+  int _width;
+  int _height;
+  u16 _color;
 } Ball;
 
 extern Ball ball;

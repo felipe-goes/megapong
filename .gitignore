@@ -1,5 +1,6 @@
 .cache/
 tutorial/
 out/
+res/resources.h
 src/boot/
 compile_commands.json
